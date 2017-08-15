@@ -88,6 +88,7 @@
 	    var pass1 = document.getElementById("password").value;
         var pass2 = document.getElementById("confirmpassword").value;
         var mail = document.getElementById('emailid').value;
+
         console.log(mail);
         
 	    if (x == "" || pass1=="" || pass2=="" || mail=="") {
@@ -95,6 +96,21 @@
 	        return false;
 	        
 	    }
+      
+
+      if(x.length < 8){
+          alert("Username should contain atleast 8 characters");
+        }
+
+      if(pass1.length <=16||pass1.search(/[a-z]/)<0||pass1.search(/[A-Z]/)<0||pass1.search(/[0-9]/)<0){
+          alert("Your password should contain atleast 1 small,capital,digit character");
+        } 
+      else{
+        alert("Password is strong")
+      }   
+
+
+
 	    
         if (pass1 !== pass2) {
             alert("Passwords Do not match");
@@ -104,17 +120,18 @@
         else {
             alert("Passwords Match!!!");
         }
-        //if(mail.indexOf('@')==-1){
-        //	alert("Enter proper Email-Id");
-        //} 
+        if(mail.indexOf('@')==-1){
+        	alert("Enter proper Email-Id");
+        } 
         // return false;
 
         // if(/^.@/.test(mail){
         // 	alert("Email should contain special characters");
         // }
-        if(/[^@]g.test(mail)/){
-        	alert("Enter proper email id");
-        }
+        //if(/[^@]g.test(mail)/){
+        	//alert("Enter proper email id");
+        //}
+        
         
 	}
 	
