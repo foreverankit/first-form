@@ -1,0 +1,124 @@
+<!Doctype html>
+<html>
+<head>
+<title>Html Css Form Validation</title>
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<style>
+	body{
+		overflow-x: hidden;
+	}
+  div {
+       max-width: 460px;
+       border: 25px solid blue;
+       padding: 25px;
+       /*margin: 25px;*/
+       margin-right: auto;
+       margin-left: auto;
+
+       /*position:absolute;top:40px;left:470px;*/
+      }
+     h1{background-color:yellow;} 
+     body{background-color:lightgreen}
+     input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    }
+    
+    input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    }
+    input[type=confirmpassword] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    }
+
+    input[type=mail] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color:yellow;
+
+    }
+    
+
+
+</style>
+
+</head>
+
+<body>
+   <div style="">
+       <p><h1 style="text-align:center">Html Css Form Validation</h1></p><br><br>
+       <form name="myform"><!--   onsubmit="return validateForm()" -->
+	       <label for='username'><h2>Username</h2></label>
+	       <input type='text' id='username' name='username' placeholder="Username"><br><br>
+	       <label for='password'><h2>Password</h2></label>
+	       <input type='password' id='password' name='password'>
+	       <label for='confirmpassword'><h2>Confirm Password</h2></label>
+	       <input type='password' id='confirmpassword' name='confirmpassword'><br><br>
+	       <label for='emai id'><h2>Email-Id</h2></label>
+	       <input type='mail' id='emailid' name='email id' value='' placeholder="foreverankit143@gmail.com"><br><br>
+	       <br><br><br>
+	       <input type='submit'  name='submit' onclick="validateForm()">
+       </form>
+   </div>
+
+
+	<script>
+	function validateForm() 
+	{
+	    var x = document.forms["myform"]["username"].value;
+	    var pass1 = document.getElementById("password").value;
+        var pass2 = document.getElementById("confirmpassword").value;
+        var mail = document.getElementById('emailid').value;
+        console.log(mail);
+        
+	    if (x == "" || pass1=="" || pass2=="" || mail=="") {
+	        alert("  All fields must be filled out");
+	        return false;
+	        
+	    }
+	    
+        if (pass1 !== pass2) {
+            alert("Passwords Do not match");
+            document.getElementById("pass1").style.borderColor = "#E34234";
+            document.getElementById("pass2").style.borderColor = "#E34234";
+        }
+        else {
+            alert("Passwords Match!!!");
+        }
+        //if(mail.indexOf('@')==-1){
+        //	alert("Enter proper Email-Id");
+        //} 
+        // return false;
+
+        // if(/^.@/.test(mail){
+        // 	alert("Email should contain special characters");
+        // }
+        if(/[^@]g.test(mail)/){
+        	alert("Enter proper email id");
+        }
+        
+	}
+	
+	
+ </script>
+</body>
+</html>
